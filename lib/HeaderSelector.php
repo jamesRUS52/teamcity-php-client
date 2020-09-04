@@ -81,7 +81,7 @@ class HeaderSelector
     private function selectAcceptHeader($accept)
     {
         if (count($accept) === 0 || (count($accept) === 1 && $accept[0] === '')) {
-            return null;
+            return 'application/json';
         } elseif (preg_grep("/application\/json/i", $accept)) {
             return 'application/json';
         } else {

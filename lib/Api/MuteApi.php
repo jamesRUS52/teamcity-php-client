@@ -334,6 +334,11 @@ class MuteApi
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
+        if ($this->config->getAccessToken()) {
+            $defaultHeaders['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+        } elseif ($this->config->getUsername() && $this->config->getPassword()) {
+            $defaultHeaders['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() .':'. $this->config->getPassword());
+        }
 
         $headers = array_merge(
             $defaultHeaders,
@@ -597,6 +602,11 @@ class MuteApi
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
+        if ($this->config->getAccessToken()) {
+            $defaultHeaders['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+        } elseif ($this->config->getUsername() && $this->config->getPassword()) {
+            $defaultHeaders['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() .':'. $this->config->getPassword());
+        }
 
         $headers = array_merge(
             $defaultHeaders,
@@ -832,6 +842,11 @@ class MuteApi
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if ($this->config->getAccessToken()) {
+            $defaultHeaders['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+        } elseif ($this->config->getUsername() && $this->config->getPassword()) {
+            $defaultHeaders['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() .':'. $this->config->getPassword());
         }
 
         $headers = array_merge(
@@ -1096,6 +1111,11 @@ class MuteApi
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if ($this->config->getAccessToken()) {
+            $defaultHeaders['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+        } elseif ($this->config->getUsername() && $this->config->getPassword()) {
+            $defaultHeaders['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() .':'. $this->config->getPassword());
         }
 
         $headers = array_merge(
@@ -1370,6 +1390,11 @@ class MuteApi
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        if ($this->config->getAccessToken()) {
+            $defaultHeaders['Authorization'] = 'Bearer '.$this->config->getAccessToken();
+        } elseif ($this->config->getUsername() && $this->config->getPassword()) {
+            $defaultHeaders['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() .':'. $this->config->getPassword());
         }
 
         $headers = array_merge(
